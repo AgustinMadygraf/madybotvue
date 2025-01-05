@@ -1,26 +1,20 @@
+<!--
+Path: src/App.vue
+Este es el componente principal de la aplicación.
+-->
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <NetworkCheck />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NetworkCheck from './components/NetworkCheck.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NetworkCheck
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
