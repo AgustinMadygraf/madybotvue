@@ -4,9 +4,10 @@
   "PHP_ENDPOINT_DEV": "http://localhost/MadyBot_PHP/public/get_data.php",
   "BASE_URL_DEV": "/",
 
-  "API_ENDPOINT_PROD": "https://10.176.61.55:5000",
+  "API_ENDPOINT_PROD": "https://10.176.61.55",
   "PHP_ENDPOINT_PROD": "../../MadyBot_PHP/public/get_data.php",
   "STREAM_ENABLED": false,
   
-  "BASE_URL_PROD": "/MadyBot_Vue/dist/"
+  "BASE_URL_PROD": "/MadyBotVue/dist/",
+  "DEBUGGING": true
 }

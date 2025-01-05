@@ -4,9 +4,11 @@ Este script se encarga de cargar la configuración de la aplicación.
 */
 
 const { defineConfig } = require('@vue/cli-service')
+const finalConfig = require('./src/config/configWrapperNode');
 const webpack = require('webpack');
 
 module.exports = defineConfig({
+  publicPath: finalConfig.BASE_URL,
   transpileDependencies: true,
   configureWebpack: {
     plugins: [
