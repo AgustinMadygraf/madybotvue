@@ -20,7 +20,7 @@ import LogService from '../services/LogService';
  */
 export async function checkPhpEndpointHealth() {
   try {
-    LogService.info('[PhpHealthService] Verificando salud de PHP_ENDPOINT...');
+    LogService.info('[PhpHealthService] Verificando salud de PHP_ENDPOINT: ,', AppConfig.PHP_ENDPOINT);
     await axios.get(`${AppConfig.PHP_ENDPOINT}/health-check`);
     LogService.info('[PhpHealthService] PHP_ENDPOINT está saludable.');
     return true;

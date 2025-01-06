@@ -7,19 +7,21 @@ console.log('         [INFO ] [src/JS/NetworkCheck/index.js             ]');
 
 import LogService from '../services/LogService';
 import { getApiEndpoint } from '@/JS/NetworkCheck/ApiEndpointProvider';
+import IntervalService from './IntervalService';
 
 export default {
   data() {
     return {
       isConnected: false,
-      checkInterval: null
-    }
+      checkInterval: null,
+    };
   },
   async mounted() {
     await this.checkConnection();
     window.addEventListener('online', this.checkConnection);
     window.addEventListener('offline', this.checkConnection);
-    this.checkInterval = setInterval(this.checkConnection, 15000); 
+    const interval = IntervalService.getDisconnectionCheckInterval();
+    this.checkInterval = setInterval(this.checkConnection, interval); 
   },
   beforeDestroy() {
     window.removeEventListener('online', this.checkConnection);
@@ -32,6 +34,9 @@ export default {
       LogService.info('[NetworkCheck] endpoint:', endpoint);
       LogService.info('[NetworkCheck] isConnected:', endpoint !== '');
       this.isConnected = endpoint !== '';
-    }
-  }
-}
+      if (!this.isConnected) {
+        setTimeout(this.checkConnection, IntervalService.getReconnectionDelay());
+      }
+    },
+  },
+};
