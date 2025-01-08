@@ -1,9 +1,9 @@
 /*
-Path: ftp-deploy.js
+Path: src/JS/services/ftp-deploy.js
 Este script se encarga de subir el build a un servidor FTP.
 */
 
-const FtpDeploy = require("ftp-deploy");
+const FtpDeploy = require("@/JS/services/ftp-deploy");
 const ftpDeploy = new FtpDeploy();
 require('dotenv').config();
 
