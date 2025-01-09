@@ -1,13 +1,16 @@
 {
   "_PATH:": "src/config/config.json",
+
   "API_ENDPOINT_DEV": "http://localhost:5000",
-  "PHP_ENDPOINT_DEV": "http://localhost/MadyBot_PHP/public/get_data.php",
+  "PHP_ENDPOINT_DEV": "http://localhost/plantilla_php/public/get_data.php",
   "BASE_URL_DEV": "/",
 
-  "API_ENDPOINT_PROD": "https://10.176.61.55",
-  "PHP_ENDPOINT_PROD": "../../MadyBot_PHP/public/get_data.php",
-  "STREAM_ENABLED": false,
+  "API_ENDPOINT_PROD": "https://localhost:5000",
+  "PHP_ENDPOINT_PROD": "../../plantilla_php/public/get_data.php",
+  "BASE_URL_PROD": "/plantilla_vue/dist/",
+  "BASE_URL_PROD_L": "/plantilla_vue/dist/",
+  "BASE_URL_PROD_R": "/plantilla_vue/dist/",
   
-  "BASE_URL_PROD": "/MadyBotVue/dist/",
-  "DEBUGGING": true
+  "DEBUGGING": true,
+  "STREAM_ENABLED": false
 }
